@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kablammo&family=Londrina+Sketch&display=swap" rel="stylesheet">
+  <title>BMI Calculator</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0IbcVU7H1M2lvBKxUMSWPedBcXVPUEwltA&s);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      gap: 40px;
+    }
+    h1{
+     color: white;
+     font-size: 50px;
+     font-family: "Londrina Sketch", sans-serif;
+     font-weight: 100;
+    } 
+    .container{
+      width: 25%;
+      height: 50vh;
+      background-color: rgba(cyan, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      border: 3px ridge lightblue;
+      
+    }
+    input{
+      width: 70%;
+      height: 5vh;
+      background-color: transparent;
+      outline-style: none;
+      border-radius: 10px;
+      padding: 10px;
+      border: 1px lightblue solid;
+      color: white;
+    }
+    input::placeholder{
+      font-size: 15px;
+      font-weight: 100;
+      color: gray;
+    }
+    .btn{
+      width: 150px;
+      height: 40px;
+      background-color: rgb(8, 20, 31);
+      color: lightblue ;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+    .btn1{
+      width: 80px;
+      height: 40px;
+      background-color: rgb(8, 20, 31);
+      color: lightblue;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+    }
+    #output{
+      width: 70%;
+      height: 8vh;
+      /* background-color: black; */
+      opacity: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 15px;
+      font-family: cursive;
+      padding: 0px 5px;
+      border-radius: 10px;
+      border: 1px lightblue dotted;
+    }
+  </style>
+</head>
+<body>
+  <h1>BMI Calculator</h1>
+ <div class="container">
+   <input type="text" value="" id="inputSect" placeholder="Weight(kg)">
+   <input type="text" value="" id="inputSect1" placeholder="Height(m)">
+   <button onclick="calcBmi()" class="btn">Calculate BMI</button>
+   <div id="output"></div>
+   <button onclick="clearr()" class="btn1"> Clear </button>
+ </div>
+</body>
+</html>
+
+<script>
+
+
+ function calcBmi() {
+    let weight = +(document.getElementById('inputSect').value)
+    let height = +(document.getElementById('inputSect1').value)
+
+    if ( weight <= 0 || height <= 0) {
+      output.innerHTML = "Please enter valid values!";
+      return;
+    }
+
+    let bmi = weight / (height* height)
+    let group;
+
+   if (bmi < 18.5) {
+      group = '(Underweight)'
+    }
+    else if (bmi < 25) {
+      group = '(Normal weight)'
+    }
+    else if (bmi < 30) {
+     group = '(Overweight)'
+    }
+    else {
+      group = '(Obese)'
+    }
+ 
+    output.innerHTML = `Your BMI is ${bmi.toFixed(1)} ${group}`
+    
+  }
+
+  function clearr() {
+
+    document.getElementById('inputSect').value = '';
+    document.getElementById('inputSect1').value = '';
+    document.getElementById('output').innerHTML = '';
+  }
+  
+ 
+</script>
