@@ -1,0 +1,90 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0IbcVU7H1M2lvBKxUMSWPedBcXVPUEwltA&s);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  gap: 40px;
+}
+h1{
+ color: white;
+ font-size: 50px;
+ font-family: "Londrina Sketch", sans-serif;
+ font-weight: 100;
+} 
+.container{
+  width: 25%;
+  height: 50vh;
+  background-color: rgba(cyan, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border: 3px ridge lightblue;
+  
+}
+input{
+  width: 70%;
+  height: 5vh;
+  background-color: transparent;
+  outline-style: none;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px lightblue solid;
+  color: white;
+}
+input::placeholder{
+  font-size: 15px;
+  font-weight: 100;
+  color: gray;
+}
+.btn{
+  width: 150px;
+  height: 40px;
+  background-color: rgb(8, 20, 31);
+  color: lightblue ;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.btn1{
+  width: 80px;
+  height: 40px;
+  background-color: rgb(8, 20, 31);
+  color: lightblue;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+#output{
+  width: 70%;
+  height: 8vh;
+  /* background-color: black; */
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  font-family: cursive;
+  padding: 0px 5px;
+  border-radius: 10px;
+  border: 1px lightblue dotted;
+}
